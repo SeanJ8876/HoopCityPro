@@ -1,12 +1,17 @@
 .standings {
   min-height: 60vh;
   padding: 40px 20px;
+  background-color: #0f1117;
 }
 
 .standings__title {
   margin: 0 0 16px;
   font-size: 32px;
-  color: red;
+  font-weight: 800;
+  color: #eceff5;
+  border-bottom: 2px solid #f97316;
+  display: inline-block;
+  padding-bottom: 8px;
 }
 
 .standings__legend {
@@ -19,7 +24,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  color: #161a23;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,9 +31,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 8px;
-  border-bottom: 1px solid #2a2f3d;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   border-left: 4px solid transparent;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.standings__item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .standings__item_winning {
@@ -42,8 +57,13 @@
 
 .standings__rank {
   width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: #aab2c5;
+  font-weight: 700;
 }
 
 .standings__item:nth-child(1) .standings__rank {
@@ -99,8 +119,20 @@
 }
 
 .standings__more {
-  display: block;
+  display: inline-block;
   margin: 24px 0 0;
+  padding: 10px 20px;
+  background: #f97316;
+  color: #161a23;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.standings__more:hover {
+  background: #fb923c;
 }
 
 .standings__status {

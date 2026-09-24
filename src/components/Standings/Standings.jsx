@@ -1,12 +1,12 @@
 import Preloader from "../Preloader/Preloader.jsx";
 import "./Standings.css";
 
-// Win percentage arrives as a ratio (0.723); show it the way box scores do (.723).
+
 function formatPct(pct) {
   return typeof pct === "number" ? pct.toFixed(3).replace(/^0/, "") : "-";
 }
 
-// Row color by record: a winning percentage gets one style, a losing one another.
+
 function getItemClass(pct) {
   if (typeof pct !== "number") {
     return "standings__item";
@@ -16,7 +16,6 @@ function getItemClass(pct) {
     : "standings__item standings__item_losing";
 }
 
-// Streak color by whether the team is on a winning (W) or losing (L) run.
 function getStreakClass(streak) {
   if (streak && streak.startsWith("W")) {
     return "standings__streak standings__streak_win";
