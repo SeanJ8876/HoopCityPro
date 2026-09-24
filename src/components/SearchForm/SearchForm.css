@@ -1,0 +1,38 @@
+.search-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-form__row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form__label {
+  display: none;
+}
+
+.search-form__input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #aab2c5;
+  border-radius: 6px;
+  background-color: #1e2433;
+  color: #eceff5;
+}
+
+.search-form__input::placeholder {
+  color: #aab2c5;
+}
+
+.search-form__error {
+  margin: 10px 0 0;
+  color: #ff8b7a;
+}
+
+@media (max-width: 700px) {
+  .search-form__row {
+    flex-direction: column;
+  }
+}

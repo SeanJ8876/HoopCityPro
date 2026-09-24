@@ -49,10 +49,14 @@ function request(path, params = {}) {
     .catch(handleNetworkError);
 }
 
+export function getStandings() {
+  return request("/v1/standings", { league: "nba" }).then((res) => res.data);
+}
+
 export function getFinishedGames() {
   return request("/v1/matches", {
     sport: "basketball",
-    league: "nba",
+    league: "HoopCityProLeague",
     status: "finished",
     limit: 200,
   }).then((res) => res.data);

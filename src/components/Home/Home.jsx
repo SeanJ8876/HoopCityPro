@@ -1,6 +1,6 @@
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
-import Highlights from "../Highlights/Highlights.jsx";
+import "./Home.css";
 
 export default function Home({
   onSearch,
@@ -8,17 +8,26 @@ export default function Home({
   isLoading,
   error,
   hasSearched,
+  visibleCount,
+  onShowMore,
+  isLoggedIn,
+  savedGames,
+  onToggleSave,
 }) {
   return (
-    <main>
+    <main className="home">
       <Header onSearch={onSearch} isLoading={isLoading} />
       <Main
         results={results}
         isLoading={isLoading}
         error={error}
         hasSearched={hasSearched}
+        visibleCount={visibleCount}
+        onShowMore={onShowMore}
+        isLoggedIn={isLoggedIn}
+        savedGames={savedGames}
+        onToggleSave={onToggleSave}
       />
-      <Highlights />
     </main>
   );
 }

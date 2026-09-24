@@ -17,9 +17,9 @@ export default function About() {
 
       <h2>The Team</h2>
       <ul className="team-list">
-        <li>Founder & Lead Developer</li>
-        <li>League Operations Coordinator</li>
-        <li>Community Outreach Lead</li>
+        <li>Founder & Lead Developer Sean Jackson</li>
+        <li>League Operations Coordinator Scottie Donald</li>
+        <li>Community Outreach Lead Alan Douglas & Scottie Donald</li>
       </ul>
     </section>
   );

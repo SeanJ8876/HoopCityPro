@@ -28,7 +28,7 @@ export default function SearchForm({ onSearch, isLoading }) {
           id="team-search"
           className="search-form__input"
           type="search"
-          placeholder="Try Lakers, Celtics, or GSW"
+          placeholder="Try HoopCityPro Teams"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           disabled={isLoading}

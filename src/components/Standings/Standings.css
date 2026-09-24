@@ -1,0 +1,131 @@
+.standings {
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+.standings__title {
+  margin: 0 0 16px;
+  font-size: 32px;
+  color: red;
+}
+
+.standings__legend {
+  margin: 0 0 20px;
+  color: #aab2c5;
+}
+
+.standings__list {
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #161a23;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.standings__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-bottom: 1px solid #2a2f3d;
+  border-left: 4px solid transparent;
+}
+
+.standings__item_winning {
+  border-left-color: #5ee08a;
+}
+
+.standings__item_losing {
+  border-left-color: #ff8b7a;
+}
+
+.standings__rank {
+  width: 28px;
+  text-align: center;
+  color: #aab2c5;
+}
+
+.standings__item:nth-child(1) .standings__rank {
+  color: #161a23;
+  background-color: #ffc145;
+  border-radius: 50%;
+}
+
+.standings__item:nth-child(2) .standings__rank {
+  color: #161a23;
+  background-color: #c9d1e0;
+  border-radius: 50%;
+}
+
+.standings__item:nth-child(3) .standings__rank {
+  color: #161a23;
+  background-color: #d98a5c;
+  border-radius: 50%;
+}
+
+.standings__team {
+  flex: 1;
+  margin: 0 12px;
+  font-weight: 600;
+  color: #eceff5;
+}
+
+.standings__record {
+  width: 60px;
+  text-align: right;
+  color: #eceff5;
+  font-weight: 600;
+}
+
+.standings__pct {
+  width: 50px;
+  text-align: right;
+  color: #aab2c5;
+}
+
+.standings__streak {
+  width: 40px;
+  text-align: right;
+  color: #aab2c5;
+}
+
+.standings__streak_win {
+  color: #5ee08a;
+}
+
+.standings__streak_loss {
+  color: #ff8b7a;
+}
+
+.standings__more {
+  display: block;
+  margin: 24px 0 0;
+}
+
+.standings__status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.standings__empty-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #eceff5;
+}
+
+.standings__message {
+  margin: 0 0 16px;
+  color: #aab2c5;
+}
+
+.standings__message_error {
+  color: #ff8b7a;
+}
+
+@media (max-width: 700px) {
+  .standings__streak {
+    display: none;
+  }
+}

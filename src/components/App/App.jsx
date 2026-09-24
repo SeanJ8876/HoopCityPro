@@ -11,7 +11,9 @@ import {
 } from "../../utils/BigBallsSportsApi.js";
 import "./App.css";
 
-const GAMES_TO_SHOW = 12;
+const REQUEST_ERROR_MESSAGE =
+  "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.";
+const GAMES_PER_PAGE = 3;
 
 export default function App() {
   // Search (Home page)
@@ -20,12 +22,15 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(GAMES_PER_PAGE);
 
   // Standings page
   const [standings, setStandings] = useState(null); // null = not loaded yet
   const [isLoadingStandings, setIsLoadingStandings] = useState(true);
   const [standingsError, setStandingsError] = useState("");
   const [standingsAttempt, setStandingsAttempt] = useState(0); // bump to retry
+  const [standingsVisibleCount, setStandingsVisibleCount] =
+    useState(GAMES_PER_PAGE);
 
   // Load the standings when the app opens (and again on "Try again").
   useEffect(() => {
@@ -36,19 +41,18 @@ export default function App() {
     getStandings()
       .then((data) => {
         if (ignore) return;
-        // data.standings holds the league table (or a list with one table in it).
         const table = Array.isArray(data.standings)
           ? data.standings[0]
           : data.standings;
         const rows = table && table.rows ? table.rows : [];
-        // Best record first.
         setStandings(
           [...rows].sort((a, b) => (b.win_pct ?? -1) - (a.win_pct ?? -1)),
         );
       })
       .catch((err) => {
         if (ignore) return;
-        setStandingsError(err.message);
+        console.error(err);
+        setStandingsError(REQUEST_ERROR_MESSAGE);
       })
       .finally(() => {
         if (ignore) return;
@@ -60,18 +64,25 @@ export default function App() {
     };
   }, [standingsAttempt]);
 
-  // Passed down to the Standings page's retry button.
+  // ----- Standings -----
+
   function handleRetryStandings() {
+    setStandingsVisibleCount(GAMES_PER_PAGE);
     setStandingsAttempt((attempt) => attempt + 1);
   }
 
-  // Passed down to SearchForm (through Home and Header).
+  function handleShowMoreStandings() {
+    setStandingsVisibleCount((count) => count + GAMES_PER_PAGE);
+  }
+
+  // ----- Search -----
+
   function handleSearch(query) {
     setIsLoading(true);
     setError("");
     setHasSearched(true);
+    setVisibleCount(GAMES_PER_PAGE);
 
-    // The free plan has a daily request limit, so only call the API the first time.
     const loadGames = allGames
       ? Promise.resolve(allGames)
       : getFinishedGames().then((games) => {
@@ -91,16 +102,20 @@ export default function App() {
               game.away.short_name,
             ].some((name) => name && name.toLowerCase().includes(q)),
           )
-          .sort((a, b) => b.kickoff_utc.localeCompare(a.kickoff_utc))
-          .slice(0, GAMES_TO_SHOW);
+          .sort((a, b) => b.kickoff_utc.localeCompare(a.kickoff_utc));
 
         setResults({ query, games: found });
       })
       .catch((err) => {
+        console.error(err);
         setResults({ query, games: [] });
-        setError(err.message);
+        setError(REQUEST_ERROR_MESSAGE);
       })
       .finally(() => setIsLoading(false));
+  }
+
+  function handleShowMore() {
+    setVisibleCount((count) => count + GAMES_PER_PAGE);
   }
 
   return (
@@ -117,6 +132,8 @@ export default function App() {
                 isLoading={isLoading}
                 error={error}
                 hasSearched={hasSearched}
+                visibleCount={visibleCount}
+                onShowMore={handleShowMore}
               />
             }
           />
@@ -127,12 +144,13 @@ export default function App() {
                 standings={standings}
                 isLoading={isLoadingStandings}
                 error={standingsError}
+                visibleCount={standingsVisibleCount}
+                onShowMore={handleShowMoreStandings}
                 onRetry={handleRetryStandings}
               />
             }
           />
           <Route path="/about" element={<About />} />
-          {/* Unknown URLs go back to the home page */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

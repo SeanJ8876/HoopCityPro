@@ -1,6 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import FormField from "../ModalWithForm/FormField.jsx";
 import useFormWithValidation from "../../hooks/useFormWithValidation.js";
+import "./RegisterModal.css";
 
 export default function RegisterModal({
   onClose,

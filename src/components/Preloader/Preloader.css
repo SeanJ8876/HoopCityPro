@@ -1,0 +1,31 @@
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  color: #aab2c5;
+}
+
+.preloader__ball {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+  border: 4px solid #2a2f3d;
+  border-top: 4px solid #ffc145;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.preloader__text {
+  margin: 0;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
