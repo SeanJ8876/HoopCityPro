@@ -16,25 +16,22 @@ const REQUEST_ERROR_MESSAGE =
 const GAMES_PER_PAGE = 3;
 
 export default function App() {
-  // Search (Home page)
-  const [allGames, setAllGames] = useState(null); // fetched once, then searched locally
+  const [allGames, setAllGames] = useState(null);
   const [results, setResults] = useState({ query: "", games: [] });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
   const [visibleCount, setVisibleCount] = useState(GAMES_PER_PAGE);
 
-  // Standings page
-  const [standings, setStandings] = useState(null); // null = not loaded yet
+  const [standings, setStandings] = useState(null);
   const [isLoadingStandings, setIsLoadingStandings] = useState(true);
   const [standingsError, setStandingsError] = useState("");
-  const [standingsAttempt, setStandingsAttempt] = useState(0); // bump to retry
+  const [standingsAttempt, setStandingsAttempt] = useState(0);
   const [standingsVisibleCount, setStandingsVisibleCount] =
     useState(GAMES_PER_PAGE);
 
-  // Load the standings when the app opens (and again on "Try again").
   useEffect(() => {
-    let ignore = false; // ignore a response that arrives after a newer request
+    let ignore = false;
     setIsLoadingStandings(true);
     setStandingsError("");
 
@@ -64,8 +61,6 @@ export default function App() {
     };
   }, [standingsAttempt]);
 
-  // ----- Standings -----
-
   function handleRetryStandings() {
     setStandingsVisibleCount(GAMES_PER_PAGE);
     setStandingsAttempt((attempt) => attempt + 1);
@@ -74,8 +69,6 @@ export default function App() {
   function handleShowMoreStandings() {
     setStandingsVisibleCount((count) => count + GAMES_PER_PAGE);
   }
-
-  // ----- Search -----
 
   function handleSearch(query) {
     setIsLoading(true);

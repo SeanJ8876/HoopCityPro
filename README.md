@@ -47,6 +47,12 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
+## Project Pitch Video
+ 
+ Check out [this video] https://www.loom.com/share/f7f65e2bde5c4c7b8e77c07c3504a638, where I describe my 
+ project and some challenges I faced while building it.
+
+
 SeanJackson-HoopCityPro
 Github repo: 
 FrontEnd:
