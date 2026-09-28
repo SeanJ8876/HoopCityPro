@@ -55,4 +55,4 @@ Currently, two official plugins are available:
 
 SeanJackson-HoopCityPro
 Github repo: git@github.com:SeanJ8876/HoopCityPro.git
-FrontEnd: https://github.com/SeanJ8876/HoopCityPro.git
+FrontEnd: https://github.com/SeanJ8876/HoopCityPro.git 
