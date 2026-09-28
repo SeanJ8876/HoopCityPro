@@ -1,4 +1,4 @@
-HoopCityPro 
+HoopCityPro
 
 The Future of Hooping Is Here. Don't Just Play. Be Seen.
 
@@ -17,16 +17,14 @@ User Accounts — sign up / log in to save favorite games and teams
 Responsive Design — styled for both desktop and mobile
 Third-Party API Integration — pulls live basketball data via a custom API service layer
 
-
 Tech Stack
 React — component-based UI
 Vite — fast dev server and build tooling
 CSS — custom styles (BEM-style class naming)
 Third-Party API — live game and league data
 
-
 Follow Us
- @hoopcitypro on Instagram
+@hoopcitypro on Instagram
 
 Author
 Sean Jackson — Founder & Lead Developer
@@ -35,7 +33,6 @@ Team
 Sean Jackson — Founder & Lead Developer
 Scottie Donald — League Operations Coordinator
 Alan Douglas & Scottie Donald — Community Outreach
-
 
 # React + Vite
 
@@ -46,13 +43,15 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-
 ## Project Pitch Video
- 
- Check out [this video] https://www.loom.com/share/f7f65e2bde5c4c7b8e77c07c3504a638, where I describe my 
- project and some challenges I faced while building it.
 
+Check out [this video] https://www.loom.com/share/f7f65e2bde5c4c7b8e77c07c3504a638, where I describe my
+project and some challenges I faced while building it.
 
 SeanJackson-HoopCityPro
 Github repo: git@github.com:SeanJ8876/HoopCityPro.git
-FrontEnd: https://github.com/SeanJ8876/HoopCityPro.git 
+FrontEnd: https://github.com/SeanJ8876/HoopCityPro.git
+
+# Deployment Link
+
+Deployment link: https://seanj8876.github.io
