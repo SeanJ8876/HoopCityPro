@@ -5,8 +5,8 @@ export default function Header({ onSearch, isLoading }) {
   return (
     <section className="header">
       <img
-        className="background__image"
-        src="/HoopCityPro.png"
+        className="header__image"
+        src={`${import.meta.env.BASE_URL}HoopCityPro.png`}
         alt=""
         aria-hidden="true"
       />

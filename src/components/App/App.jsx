@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "../Navigation/Navigation.jsx";
 import Home from "../Home/Home.jsx";
 import About from "../About/About.jsx";

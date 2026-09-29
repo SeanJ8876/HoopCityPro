@@ -1,5 +1,5 @@
 const BASE_URL = "https://api.bigballsdata.com";
-const API_KEY = import.meta.env.VITE_BIGBALLS_API_KEY;
+const API_KEY = "bbs_live_00000cwC0PI8cLI9TAd8oXY8HpdDWXgmMPj7rgqqQeWCvxYA";
 
 function checkResponse(res) {
   if (res.ok) {
@@ -56,8 +56,21 @@ export function getStandings() {
 export function getFinishedGames() {
   return request("/v1/matches", {
     sport: "basketball",
-    league: "HoopCityProLeague",
+    league: "nba",
     status: "finished",
     limit: 200,
   }).then((res) => res.data);
 }
+
+fetch(
+  "https://api.bigballsdata.com/v1/matches?sport=basketball&league=nba&status=finished&limit=5",
+  {
+    headers: {
+      Authorization:
+        "Bearer bbs_live_00000cwC0PI8cLI9TAd8oXY8HpdDWXgmMPj7rgqqQeWCvxYA",
+    },
+  },
+)
+  .then((r) => r.json())
+  .then(console.log)
+  .catch(console.error);

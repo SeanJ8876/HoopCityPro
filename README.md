@@ -54,4 +54,4 @@ FrontEnd: https://github.com/SeanJ8876/HoopCityPro.git
 
 # Deployment Link
 
-Deployment link: https://seanj8876.github.io
+Deployment link: https://seanj8876.github.io/HoopCityPro
