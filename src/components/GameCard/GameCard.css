@@ -1,0 +1,57 @@
+.game-card {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: #1e2433;
+  list-style: none;
+}
+
+.game-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.game-card__meta {
+  margin: 0;
+  font-size: 14px;
+  color: #aab2c5;
+}
+
+.game-card__save {
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #eceff5;
+  background-color: transparent;
+  border: 1px solid #aab2c5;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.game-card__save:hover {
+  border-color: #ffc145;
+  color: #ffc145;
+}
+
+.game-card__save_active {
+  color: #161a23;
+  background-color: #ffc145;
+  border-color: #ffc145;
+}
+
+.game-card__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  color: #aab2c5;
+}
+
+.game-card__row_winner {
+  color: #eceff5;
+  font-weight: 700;
+}
+
+.game-card__score {
+  font-size: 20px;
+}

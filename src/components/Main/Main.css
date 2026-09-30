@@ -1,0 +1,43 @@
+.main__results {
+  padding: 40px 20px;
+}
+
+.main__title {
+  margin: 0 0 20px;
+  font-size: 28px;
+  color: #eceff5;
+}
+
+.main__message {
+  margin: 0;
+  color: #aab2c5;
+  font-size: 16px;
+}
+
+.main__message_error {
+  color: #ff8b7a;
+}
+
+.main__empty {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.main__empty-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #eceff5;
+}
+
+.main__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.main__more {
+  display: block;
+  margin: 24px auto 0;
+}
