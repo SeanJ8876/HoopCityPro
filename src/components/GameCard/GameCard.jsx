@@ -8,13 +8,7 @@ function formatDate(isoDate) {
   });
 }
 
-export default function GameCard({
-  game,
-  isLoggedIn,
-  isSaved,
-  onToggleSave,
-  savedLabel = "Saved",
-}) {
+export default function GameCard({ game }) {
   const homeScore = game.score ? game.score.home : null;
   const awayScore = game.score ? game.score.away : null;
   const hasScores = homeScore !== null && awayScore !== null;
@@ -28,22 +22,7 @@ export default function GameCard({
 
   return (
     <li className="game-card">
-      <div className="game-card__top">
-        <p className="game-card__meta">{formatDate(game.kickoff_utc)}</p>
-        <button
-          className={
-            isSaved
-              ? "game-card__save game-card__save_active"
-              : "game-card__save"
-          }
-          type="button"
-          aria-pressed={isSaved}
-          title={isLoggedIn ? undefined : "Sign in to save games"}
-          onClick={() => onToggleSave(game)}
-        >
-          {isSaved ? savedLabel : "Save"}
-        </button>
-      </div>
+      <p className="game-card__meta">{formatDate(game.kickoff_utc)}</p>
       {rows.map(({ team, score, won }) => (
         <p
           key={team.id}

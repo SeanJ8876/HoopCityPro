@@ -10,9 +10,6 @@ export default function Main({
   hasSearched,
   visibleCount,
   onShowMore,
-  isLoggedIn,
-  savedGames,
-  onToggleSave,
 }) {
   const { query, games } = results;
 
@@ -46,13 +43,7 @@ export default function Main({
         <h2 className="main__title">{`Latest games for "${query}"`}</h2>
         <ul className="main__list">
           {games.slice(0, visibleCount).map((game) => (
-            <GameCard
-              key={game.id}
-              game={game}
-              isLoggedIn={isLoggedIn}
-              isSaved={savedGames.some((saved) => saved.id === game.id)}
-              onToggleSave={onToggleSave}
-            />
+            <GameCard key={game.id} game={game} />
           ))}
         </ul>
         {games.length > visibleCount && (
