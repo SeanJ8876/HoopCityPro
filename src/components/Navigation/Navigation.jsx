@@ -25,6 +25,9 @@ export default function Navigation({
         <NavLink className={linkClass} to="/standings">
           Standings
         </NavLink>
+        <NavLink className={linkClass} to="/weather">
+          Court Weather
+        </NavLink>
         {isLoggedIn && (
           <NavLink className={linkClass} to="/saved">
             Saved games

@@ -24,15 +24,16 @@
   width: auto;
 }
 
-.navigation__links {
-  display: flex;
-  gap: 20px;
-}
-
 .navigation__link {
   color: #eceff5;
   text-decoration: none;
   font-weight: 600;
+}
+
+.navigation__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
 .navigation__link:hover {

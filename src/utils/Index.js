@@ -31,3 +31,14 @@ api
     console.error(err);
     list.textContent = "Could not load cards. Please try again later.";
   });
+
+fetch("https://geocoding-api.open-meteo.com/v1/search?name=Cincinnati&count=1")
+  .then((r) => r.json())
+  .then((d) => {
+    const { latitude, longitude } = d.results[0];
+    return fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph`,
+    );
+  })
+  .then((r) => r.json())
+  .then(console.log);
